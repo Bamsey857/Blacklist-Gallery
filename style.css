@@ -1,0 +1,165 @@
+body{
+    background-color: rgba(0, 0, 0, 0.925);
+    height: 300vh;
+}
+header{
+    height: 3rem;
+    display: flex;
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.918);
+    top: 1px;
+    z-index: 1;
+}
+header img{
+    height: 100%;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+#main{
+    display: flex;
+    color: white;
+    justify-content: end;
+    align-content: end;
+}
+#main li{
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    list-style: none;
+    align-content: end;
+    justify-content: end;
+}
+#main li a{
+    color: white;
+    text-decoration: none;
+}
+#main li a:active{
+    color: red;
+    text-decoration: none;
+}
+#main li a:hover{
+    color: red;
+    font-weight: bolder;
+}
+nav{
+    display: flex;
+    justify-content:end;
+    width: 100%;
+    margin-right: 5rem;
+    cursor: pointer;
+}
+#parent{
+    z-index: -1;
+    height: 100%;
+    background-color:black;
+    margin-top: 2rem;
+    margin: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+}
+#A, #C, #D, #E, #G, #H,#B,#F{ 
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+    cursor: pointer;
+}
+#B, #F{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+#A img, #B img, #C img, #D img, #E img, #F img, #G img, #H img{
+    display: inline-block;
+    filter: blur(8px);
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    transition: filter 1s ease-in-out, transform 1s ease-in-out all;
+}
+#A:hover img, #B:hover img, #C:hover img, #D:hover img, #E:hover img, #F:hover img, #G:hover img, #H:hover img{
+    font-size: 18px;
+    object-fit: contain;
+    filter: blur(0);
+    transform: scale(1.2);
+    transition: filter 1s ease-in-out;
+}
+#eli, #tom, #kap, #ray, #dem, #res, #mar, #har{
+    position: absolute;
+    color: white;
+    filter: blur(8px);
+}
+#A:hover #eli, #B:hover #ray, #C:hover #tom, #D:hover #kap, #E:hover #dem, #F:hover #har, #G:hover #res, #H:hover #mar{
+    filter: blur(0);
+    transition: width 1s ease-in-out;
+}
+#eli::after, #tom::after, #kap::after, #ray::after, #dem::after, #res::after, #mar::after, #har::after{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 3px;
+    width: 0px;
+    background: white;
+    transition: 1s;
+}
+#eli::before, #tom::before, #kap::before, #ray::before, #dem::before, #res::before, #mar::before, #har::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: white;
+    transition: 1s;
+}
+#A:hover #eli::after,#A:hover #eli::before, #D:hover #kap::after,#D:hover #kap::before, #C:hover #tom::after, #C:hover #tom::before,#E:hover #dem::after,#E:hover #dem::before{
+    width: 100%;
+}
+#G:hover #res::after,#G:hover #res::before, #H:hover #mar::after,#H:hover #mar::before,#B:hover #ray::after,#B:hover #ray::before,#F:hover #har::after,#F:hover #har::before{
+    width: 100%;
+}
+footer{
+    display: flex;
+    height: 26rem;
+    background-color:rgba(0, 0, 0, 0.966);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#last{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+footer img{
+    align-self: top;
+    vertical-align: bottom;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+#icon{
+    color: lightblue;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0s;
+}
+#icon a{
+    color: lightblue;
+    text-decoration: none;
+}
+#icon a:hover{
+    color: red;
+}
+/* @media screen and (max-width:768px) {
+    #parent{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 12rem ;
+
+    }
+} */
